@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<!-- HEADER/DISCLAIMER
+ 
+Project:  Responsive Site
+Name: Josh Whitney
+Submitted: 30 Nov 2024
+ 
+I declare that the following source code was written by me, or provided
+by the instructor for this project. I understand that copying source
+code from any other source, providing source code to another student, 
+or leaving my code on a public web site constitutes cheating.
+I acknowledge that  If I am found in violation of this policy this may result
+in a zero grade, a permanent record on file and possibly immediate failure of the class.
+ 
+Reflection (1-2 paragraphs):  Changes made: Added validation form in div between main content and footer. Added link for form.js scripts. Other minor style edits to accomadate new form. Added survey button in aside.
+Adding the form wasn't nearly as bad as I thought. Still frustrating in ways I think could have been avoided. I would have loved to have done this project *after* the zyBook assignments for FormsB opened up. There was a great amount of struggle, not because I didn't know how to implement the form, but because troubleshooting something you only half understand (from the FormsA assignment we did first) leads to frustrations, especially when the answers aren't readily on the internet. This may also partially be due to me having more experience with compiled languages than interpreted languages.
+-->
+
+<html>
+
+<head>
+    <!--Header-->
+    <link id="sheet" rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/main.js"></script>
+    <script src="js/form.js"></script>
+
+    <title>Pitcher Plant Infauna</title>
+</head>
+
+
+<div class="grid"><!--Start Grid-->
+<header>
+    <h1>Nepenthes and Symbiosis</h1>
+</header>
+
+<aside> <!--menu-->
+    <ul>
+        <li><button class="homeBtn" onclick="home()">Home</button></li>
+        <li><button class="btn" onclick="page1()">Mutualism</button></li>
+        <li><button class="btn" onclick="page2()">Pitcher Plant</button></li>
+        <li><button class="btn" onclick="page3()">Advantages</button></li>
+        <li><button class="themeBtn" onclick="toggleTheme()">Toggle Night Mode</button></li>
+        <li><button class="formBtn" onclick="openForm()">Survey</button></li>
+    </ul>
+</aside>
+
+<section class="main">
+    <div class="mainContent" id="home">
+        <!--Home-->
+        <h2>Nepenthes</h2>
+        <p>Nepenthes is a genus of pitcher plant with a rather unique trait:
+            various small organisms live inside of them. Fly larvae, spiders, ants, and even a species of crab
+            make their homes inside of these carnivorous plants. This is unusual. How do the creatures survive living
+            in a plant designed to trap and kill small insects? How does this benefit the pitcher plant? Amazingly, some of these animals are so
+            adapted to the Nepenthes plants that they cannot survive anywhere else.
+        </p>
+
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ll2Gc0K72FI?si=NlI3vPgWuiL9kFek" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <footer>
+            Each page on this site has a footer here! On other pages, you will find source references here!
+        </footer>
+    </div>
+
+    <div class="p1" id="page1">
+        <h2>Mutualism</h2>
+        <p>
+            We do not yet fully understand the complex relationships between Nepenthes plants and the pitcher fauna. Are the infauna parasitic, "stealing"
+            food from the pitchers? Or is their relationship a form of mutualism, where both parties benefit?
+        </p>
+        <p>
+            The benefits for the infuana are fairly clear: food and shelter. The digestive pools in the pitchers provide an aquatic home to a surprising number of species,
+            and a few larger insects and spiders have learned to live within the pitcher. For the plant itself, the infauna may provide additional cleaning. Take, for instance, <em>Colobopsis schmitzi</em>
+            ants, living within the <em>Nepenthes bicalcarata</em>. The pitcher traps and provides food for the ants, as well as granting self shelter. In return, the ants keep the pitcher's trapping surface
+            clean and slippery while also defending the plant against predators.
+        </p>
+        <p>
+            In the case of the crab spider, scientists have observed the spider catching prey that drew too near the pitcher. After the spider finished feeding, it would drop the carcass
+            into the pitcher, allowing it to digest and feed on the remains.
+        </p>
+        <img src="homeImg.jpg", alt="pitcher-and-spider">
+        <figcaption>Fig.1 - from National University of Singapore</figcaption>
+        <footer>
+            <a href="https://nph.onlinelibrary.wiley.com/doi/full/10.1002/ppp3.10104">
+            <a href="https://nph.onlinelibrary.wiley.com/doi/full/10.1002/ppp3.10104">Inside the trap: biology and behavior of the pitcher-dwelling crab spider, <em>Misumenops nephenthicola</em></a>
+        </footer>
+    </div>
+
+    <div class="p2" id="page2">
+        <h2>Living in a Pitcher Plant</h2>
+        <p>
+            The pitchers of Nepenthes plants are specialized organs that trap, kill, and digest arthropods. Lined with slippery surfaces and filled with digestive, acidic fluids, insects are lured within
+            to drown and be digested. Some species even have particularly sticky fluids that keep prey held within.
+        </p>
+        <p>
+            Because of this, organisms must either be uniquely adapted to swimming in the digestive fluids or be capable of staying on the safe yet slippery inner surface.
+            Fascinatingly, crab spiders will cover the inside of their host pitcher with a fine silk mesh, possibly helping them navigate safely.
+        </p>
+        <img src="livingIn.jpg", alt="living-in-plant">
+        <figcaption>Figures - Spider, Web in Plant. From Karl and Bauer</figcaption>
+        <footer>
+            <a href="https://nph.onlinelibrary.wiley.com/doi/full/10.1002/ppp3.10104">Inside the trap: biology and behavior of the pitcher-dwelling crab spider, <em>Misumenops nephenthicola</em></a>
+        </footer>
+    </div>
+
+    <!-- validation form -->
+
+
+    <div class="survey" id="survey">
+        <h2>Survey</h2>
+        <div id="success" class="success" style="display:none">
+            Thank you!
+        </div>
+        <form id="form" novalidate="GET" action="https://wp.zybooks.com/form-viewer.php">
+            <ul>
+                <li class="section-display">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="First Name">
+                    <div class="error"></div>
+                </li>
+                <li>
+                    <label for="surname">Surname</label>
+                    <input type="text" id="surname" name="surname" placeholder="Last Name">
+                    <div class="error"></div>
+                </li>
+                <li>
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="Address">
+                    <div class="error"></div>
+                </li>
+                <li>
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" placeholder="City">
+                    <div class="error"></div>
+                </li>
+                <li>
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" placeholder="State">
+                    <div class="error"></div>
+                </li>
+                <li>
+                    <label for="zip">Zip</label>
+                    <input type="text" id="zip" name="zip" placeholder="Zip Code">
+                    <div class="error"></div>
+                </li>
+                <li>
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Email Address">
+                    <div class="error"></div>
+                </li>
+                <li>
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" name="phone" placeholder="Phone Number">
+                    <div class="error"></div>
+                </li>
+                <h4>How did you find this page?</h4>
+                <li>
+                    <input type="radio" id="google" class="radio" name="radio" value="google">
+                    <label for="google">Google Search</label>
+                </li>
+                <li>
+                    <input type="radio" id="friend" class="radio" name="radio" value="friend">
+                    <label for="friend">Friend</label>
+                </li>
+                <li>
+                    <input type="radio" id="net" class="radio" name="radio" value="net">
+                    <label for="net">Internet</label>
+                </li>
+                <li>
+                    <input type="radio" id="other" class="radio" name="radio" value="other">
+                    <label for="other">Other</label>
+                    <div class="radioError"></div>
+                </li>
+
+                <li>
+                    <label for="comment">Comments</label>
+                    <textarea rows="3" id="comment" placeholder="Please leave any feedback here!"></textarea>
+                </li>
+
+                <!-- Submit button -->
+                 <li>
+                    <button type="submit">Submit</button>
+                 </li>
+            </ul>
+        </form>
+    </div>
+
+    <div class="p3" id="page3">
+        <h2>Advantages to Being "Robbed"</h2>
+        <p>
+            At first glance, it may seem that the Nepenthes pitchers are losing in this arragement. After all, isn't the symbiote stealing food? And yet, studies have found this to be the opposite.
+            It seems that while empty pitchers <em>do</em> receive more nutrients from their prey, the visiting arthropods will often catch more prey than the pitcher alone. Even though the insects or spiders
+            steal that "first taste" of the prey, the pitcher receives more nutrients over all. Alternatively, some animals will fish prey from within the pitcher. Here, the pitcher gets the first taste, and the
+            crab or spider or other guest keeps the pitcher clean and healthy in exchange for food.
+        </p>
+        <footer>
+            <a href="https://phys.org/news/2018-11-tale-spider-pitcher-predators-benefit.html">The tale of a spider and a pitcher plant: Study explains how two predators can benefit from collaboration</a>
+        </footer>
+    </div>
+
+    
+</section>
+</div> <!--End Grid-->
+
+<!-- Causes js to load only after rest of page -->
+<script defer src="js/validation.js"></script>
+
+
+</html>

@@ -1,0 +1,111 @@
+
+/*DARK STYLE: Themed dark-mode. Also shifts images to right and text to left.*/
+
+html {
+    background-color: #111;
+    color: ghostwhite;
+}
+
+header {
+    background-color: darkslateblue;
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* nav menu styling*/
+
+aside {
+    float: right;
+    color: #111;
+}
+
+ul {    
+    background-color: #111;
+    align-items: right;
+}
+li {
+    color: #eee;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*button styling*/
+
+.btn {
+    background-color: darkslateblue;
+    color: aliceblue;
+}
+
+.homeBtn {
+    background-color: darkslateblue;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.themeBtn {
+    background-color: #eee;
+    color: #111;
+}
+
+/*end button styling*/
+
+/*end nav styling*/
+
+/*page styling*/
+
+.main {
+    background-color: darkgreen;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div .grid { /*container for website*/
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+}
+
+/*These only work properly when separated out*/
+div .p1 {
+    display: none;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+}
+div .p2 {
+    display: none;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+}
+div .p3 {
+    display: none;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+}
+
+img {
+    grid-column: auto / 1;
+    grid-row: 1 / 3;
+    box-shadow: 5px 10px#afc;
+    margin: 20px;
+}
+figcaption {
+    grid-column: auto / 1;
+    grid-row: 4 / auto;
+    
+}
+
+p {
+    grid-column: 1 / 2;
+}
+
+footer {
+    background-color: yellowgreen;
+    box-shadow: 4px 8px greenyellow;
+    color: ghostwhite;
+}
+
+h2 {
+    color: lightslategray;
+}
+
+.video {
+    box-shadow: 8px 16px #8c9;
+}
